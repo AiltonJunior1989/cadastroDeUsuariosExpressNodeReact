@@ -1,0 +1,37 @@
+MÉTODOS HTTP
+Get - Listar
+Post - Criar
+Put - Editar vários
+Patch - Editar Um
+Delete - Deletar
+
+As rotas basicamente necessitam de 
+1 - Tipo de rota/Método HTTP
+2 - Endereço
+
+Nas chamadas dos métodos sempre terá uma requisicão e uma resposta
+
+Existe algumas formas de enviar parâmetros para o servidor e uma delas é o QUERY PARAMS(GET) onde são enviados os parâmetros pela URL, EX:
+servidor.com/usuarios?estado=bahia&cidade=salvador
+servidor.com/series?tipo=comedia&streming=netflix
+Para "avisar" o uso de query params deve-se utilizar o ponto de interrogação, os parâmetros são separados por &.
+
+Como segunda opção existe as ROUTE PARAMS (GET, PUT, DELETE)
+Para buscar, deletar ou editar algo específico
+
+get - servidor.com/usuarios/22
+put - servidor.com/usuarios/22
+delete - servidor.com/usuarios/22
+
+E por último tem-se o BODY PARAMS (POST e PUT) para enviar informações para o servidor
+
+{
+  "nome": "Rodolfo", "id": 22
+}
+
+Por padrão o express não reconhece arquivos json, para reconhecer deve-se utilizar a seguinte linha de comando: app.use(express.json());
+
+Há algumas respostas das requisições e por padrão utiliza-se
+2XX - Sucesso
+4XX - Erro cliente
+5XX - Erro servidor
